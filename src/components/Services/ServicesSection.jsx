@@ -14,8 +14,8 @@ export const ServicesSection = () => {
         <section className="bento-grid" id="services">
             {/* Header Card */}
             <div className="col-span-12" style={{ textAlign: 'center', padding: '4rem 1rem' }}>
-                <h2 style={{ fontSize: '3rem', marginBottom: '1rem' }}>Professional Services</h2>
-                <p style={{ color: '#666', fontSize: '1.2rem' }}>Tailored for every corner of your life.</p>
+                <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', marginBottom: '1rem', color: 'var(--text-primary)' }}>Professional Services</h2>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem' }}>Tailored for every corner of your life.</p>
             </div>
 
             {/* Domestic Cleaning */}
@@ -36,7 +36,7 @@ export const ServicesSection = () => {
                         <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>Regular Clean</h3>
                         <p style={{ color: '#666' }}>Weekly or fortnightly visits to keep your sanctuary pristine.</p>
                     </div>
-                    <button className="btn-outline" style={{ borderColor: '#ddd', color: 'var(--bg-dark)', width: 'fit-content', marginTop: '1rem', padding: '0.5rem 1rem' }}>
+                    <button className="btn-outline" style={{ border: '1px solid var(--text-secondary)', color: 'var(--text-primary)', width: 'fit-content', marginTop: '1rem', padding: '0.5rem 1rem' }}>
                         Learn More <MoveRight size={16} />
                     </button>
                 </div>
@@ -88,7 +88,7 @@ export const ServicesSection = () => {
                         <span style={{ fontWeight: 600 }}>End of Tenancy</span>
                     </div>
                     <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>Move Out</h3>
-                    <p style={{ color: '#666' }}>Guaranteed deposit return service.</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>Guaranteed deposit return service.</p>
                 </div>
             </motion.div>
         </section>
