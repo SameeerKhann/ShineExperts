@@ -13,7 +13,7 @@ export const ServicesSection = () => {
     return (
         <section className="bento-grid" id="services">
             {/* Header Card */}
-            <div style={{ gridColumn: 'span 12', textAlign: 'center', padding: '4rem 0' }}>
+            <div className="col-span-12" style={{ textAlign: 'center', padding: '4rem 1rem' }}>
                 <h2 style={{ fontSize: '3rem', marginBottom: '1rem' }}>Professional Services</h2>
                 <p style={{ color: '#666', fontSize: '1.2rem' }}>Tailored for every corner of your life.</p>
             </div>
@@ -21,8 +21,8 @@ export const ServicesSection = () => {
             {/* Domestic Cleaning */}
             <motion.div
                 whileHover={{ y: -5 }}
-                className="bento-card light"
-                style={{ gridColumn: 'span 4', height: '500px', display: 'flex', flexDirection: 'column', padding: 0 }}
+                className="bento-card light col-span-4"
+                style={{ display: 'flex', flexDirection: 'column', padding: 0, minHeight: '400px' }}
             >
                 <div style={{ height: '60%', overflow: 'hidden' }}>
                     <img src={IMAGES.domestic} alt="Domestic Cleaning" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -45,15 +45,14 @@ export const ServicesSection = () => {
             {/* Deep Cleaning (Featured) - MIRROR EFFECT APPLIED */}
             <motion.div
                 whileHover={{ y: -5 }}
-                className="bento-card"
+                className="bento-card col-span-4"
                 style={{
-                    gridColumn: 'span 4',
-                    height: '500px',
                     display: 'flex',
                     flexDirection: 'column',
                     padding: 0,
                     position: 'relative',
-                    background: 'linear-gradient(145deg, rgba(6,34,41,0.95) 0%, rgba(11,65,79,0.95) 100%)', // Enhanced background
+                    minHeight: '400px',
+                    background: 'linear-gradient(145deg, rgba(6,34,41,0.95) 0%, rgba(11,65,79,0.95) 100%)',
                     backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(255,255,255,0.1)'
                 }}
@@ -77,8 +76,8 @@ export const ServicesSection = () => {
             {/* Moving */}
             <motion.div
                 whileHover={{ y: -5 }}
-                className="bento-card light"
-                style={{ gridColumn: 'span 4', height: '500px', display: 'flex', flexDirection: 'column', padding: 0 }}
+                className="bento-card light col-span-4"
+                style={{ display: 'flex', flexDirection: 'column', padding: 0, minHeight: '400px' }}
             >
                 <div style={{ height: '60%', overflow: 'hidden' }}>
                     <img src={IMAGES.move} alt="Moving" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />

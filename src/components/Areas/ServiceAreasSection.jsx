@@ -48,7 +48,7 @@ const boroughs = [
 export const ServiceAreasSection = () => {
     return (
         <section className="bento-grid" id="areas" style={{ marginTop: '4rem', paddingBottom: '4rem' }}>
-            <div style={{ gridColumn: 'span 12', textAlign: 'center', marginBottom: '4rem' }}>
+            <div className="col-span-12" style={{ textAlign: 'center', marginBottom: '4rem' }}>
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -75,9 +75,8 @@ export const ServiceAreasSection = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
-                    className="glass-panel"
+                    className="glass-panel col-span-4"
                     style={{
-                        gridColumn: 'span 4',
                         padding: '2rem',
                         display: 'flex',
                         flexDirection: 'column',
@@ -103,8 +102,7 @@ export const ServiceAreasSection = () => {
                 </motion.div>
             ))}
 
-            <div className="bento-card" style={{
-                gridColumn: 'span 12',
+            <div className="bento-card col-span-12" style={{
                 background: 'var(--bg-dark)',
                 color: 'white',
                 padding: '4rem',

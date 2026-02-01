@@ -42,29 +42,29 @@ export const ReviewsSection = () => {
                 zIndex: -1
             }} />
 
-            <div className="glass-panel" style={{ margin: '0 1rem', padding: '4rem 2rem', minHeight: '600px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div className="glass-panel" style={{ margin: '0 1rem', padding: '3rem 1rem', minHeight: '500px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
                 {/* Inner Content Wrapper */}
                 <div style={{ width: '100%', maxWidth: '1200px' }}>
 
                     {/* Header within Glass */}
                     <div style={{ textAlign: 'center', marginBottom: '4rem', color: 'var(--bg-dark)' }}>
-                        <h2 style={{ fontSize: '3.5rem', marginBottom: '1rem', letterSpacing: '-1px' }}>
+                        <h2 style={{ fontSize: 'clamp(2.2rem, 6vw, 3.5rem)', marginBottom: '1rem', letterSpacing: '-1px', lineHeight: '1.2' }}>
                             Cleaner Space,<br />
                             Clearer Mind
                         </h2>
-                        <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '2rem' }}>
-                            <Link to="/reviews" style={{ background: 'var(--bg-dark)', border: 'none', padding: '0.8rem 1.5rem', borderRadius: '50px', fontWeight: '600', color: 'white', textDecoration: 'none' }}>
+                        <div style={{ display: 'flex', justifyContent: 'center', gap: '0.8rem', marginTop: '2rem', flexWrap: 'wrap' }}>
+                            <Link to="/reviews" style={{ background: 'var(--bg-dark)', border: 'none', padding: '0.8rem 1.5rem', borderRadius: '50px', fontWeight: '600', color: 'white', textDecoration: 'none', fontSize: '0.9rem' }}>
                                 Our Reviews
                             </Link>
-                            <Link to="/stories" style={{ background: 'transparent', border: '1px solid rgba(0,0,0,0.1)', padding: '0.8rem 1.5rem', borderRadius: '50px', fontWeight: '600', color: 'var(--bg-dark)', textDecoration: 'none' }}>
+                            <Link to="/stories" style={{ background: 'transparent', border: '1px solid rgba(0,0,0,0.1)', padding: '0.8rem 1.5rem', borderRadius: '50px', fontWeight: '600', color: 'var(--bg-dark)', textDecoration: 'none', fontSize: '0.9rem' }}>
                                 Customer Stories
                             </Link>
                         </div>
                     </div>
 
                     {/* Cards Grid */}
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.5rem' }}>
                         {REVIEWS.map((review, idx) => (
                             <motion.div
                                 key={idx}

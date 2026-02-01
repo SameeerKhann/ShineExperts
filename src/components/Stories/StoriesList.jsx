@@ -34,9 +34,9 @@ const STORIES_DATA = [
 
 export const StoriesList = () => {
     return (
-        <section style={{ padding: '4rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
-            <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
-                <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem', color: 'var(--bg-dark)' }}>Customer <span style={{ color: 'var(--primary-green)' }}>Stories</span></h1>
+        <section style={{ padding: '4rem 1rem', maxWidth: '1200px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+                <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', marginBottom: '1rem', color: 'var(--bg-dark)' }}>Customer <span style={{ color: 'var(--primary-green)' }}>Stories</span></h1>
                 <p style={{ fontSize: '1.2rem', color: '#666' }}>Dive deep into how we transform homes across Greater Manchester.</p>
             </div>
 
@@ -48,12 +48,9 @@ export const StoriesList = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
+                        className={idx % 2 === 0 ? "responsive-flex" : "responsive-flex-reverse"}
                         style={{
-                            display: 'flex',
-                            flexDirection: idx % 2 === 0 ? 'row' : 'row-reverse',
-                            gap: '4rem',
-                            alignItems: 'center',
-                            flexWrap: 'wrap'
+                            alignItems: 'center'
                         }}
                     >
                         {/* Image Side */}
@@ -64,10 +61,10 @@ export const StoriesList = () => {
                                     alt={story.title}
                                     style={{
                                         width: '100%',
-                                        borderRadius: '40px',
+                                        borderRadius: '24px',
                                         boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
                                         objectFit: 'cover',
-                                        height: '400px'
+                                        height: 'clamp(250px, 40vh, 400px)'
                                     }}
                                 />
                                 <div style={{
@@ -88,8 +85,8 @@ export const StoriesList = () => {
 
                         {/* Text Side */}
                         <div style={{ flex: '1', minWidth: '300px' }}>
-                            <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', color: 'var(--bg-dark)' }}>{story.title}</h2>
-                            <p style={{ fontSize: '1.2rem', color: 'var(--primary-green)', fontWeight: '600', marginBottom: '2rem' }}>{story.subtitle}</p>
+                            <h2 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', marginBottom: '1.2rem', color: 'var(--bg-dark)' }}>{story.title}</h2>
+                            <p style={{ fontSize: '1.1rem', color: 'var(--primary-green)', fontWeight: '600', marginBottom: '1.5rem' }}>{story.subtitle}</p>
 
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                                 <div>
