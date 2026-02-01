@@ -24,20 +24,11 @@ export const ContactSection = () => {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
                             <div style={{ background: 'rgba(255,255,255,0.1)', padding: '0.8rem', borderRadius: '50%' }}>
-                                <Phone color="var(--primary-green)" />
-                            </div>
-                            <div>
-                                <p style={{ fontSize: '0.9rem', color: '#aaa' }}>Phone</p>
-                                <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>0161 123 4567</p>
-                            </div>
-                        </div>
-                        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                            <div style={{ background: 'rgba(255,255,255,0.1)', padding: '0.8rem', borderRadius: '50%' }}>
                                 <Mail color="var(--primary-green)" />
                             </div>
                             <div>
                                 <p style={{ fontSize: '0.9rem', color: '#aaa' }}>Email</p>
-                                <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>hello@shineexperts.co.uk</p>
+                                <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>info@shineexperts.co.uk</p>
                             </div>
                         </div>
                         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>

@@ -20,15 +20,6 @@ export const Footer = () => {
                     <div>
                         <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', fontFamily: 'var(--font-heading)' }}>Contact Us</h3>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                                <div style={{ background: 'rgba(255,255,255,0.1)', padding: '8px', borderRadius: '50%' }}>
-                                    <Phone size={18} color="var(--primary-green)" />
-                                </div>
-                                <div>
-                                    <p style={{ fontSize: '0.9rem', opacity: 0.7 }}>Call Us</p>
-                                    <p style={{ fontWeight: '600' }}>(587)-355-2116</p>
-                                </div>
-                            </div>
 
                             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                                 <div style={{ background: 'rgba(255,255,255,0.1)', padding: '8px', borderRadius: '50%' }}>
@@ -36,7 +27,7 @@ export const Footer = () => {
                                 </div>
                                 <div>
                                     <p style={{ fontSize: '0.9rem', opacity: 0.7 }}>Email</p>
-                                    <p style={{ fontWeight: '600' }}>info@rightchoicecleaning.ca</p>
+                                    <p style={{ fontWeight: '600' }}>info@shineexperts.co.uk</p>
                                 </div>
                             </div>
 

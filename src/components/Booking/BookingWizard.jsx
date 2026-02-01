@@ -46,10 +46,6 @@ export const BookingWizard = () => {
                         ))}
                     </div>
 
-                    <div style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.05)', borderRadius: 'var(--radius-sm)' }}>
-                        <p style={{ fontSize: '0.9rem', color: 'var(--text-mist)' }}>Need help? Call us 24/7</p>
-                        <p style={{ fontSize: '1.2rem', fontWeight: 'bold', color: 'white' }}>0161 123 4567</p>
-                    </div>
                 </div>
 
                 {/* Right Panel: Form Fields */}
