@@ -10,6 +10,7 @@ import { FaqsPage } from './pages/FaqsPage'
 import { ServiceAreasPage } from './pages/ServiceAreasPage'
 import { ReviewsPage } from './pages/ReviewsPage'
 import { CustomerStoriesPage } from './pages/CustomerStoriesPage'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import { Preloader } from './components/Layout/Preloader'
 import { useState, useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
@@ -38,6 +39,7 @@ function App() {
                             <Route path="reviews" element={<ReviewsPage />} />
                             <Route path="stories" element={<CustomerStoriesPage />} />
                             <Route path="contact" element={<ContactPage />} />
+                            <Route path="privacy" element={<PrivacyPolicyPage />} />
                         </Route>
                     </Routes>
                 </>

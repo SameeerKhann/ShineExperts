@@ -1,5 +1,6 @@
 import React from 'react'
 import { Phone, Mail, Clock, MapPin, Facebook, Instagram, Twitter } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import Logo from '../UI/Logo'
 
 export const Footer = () => {
@@ -78,7 +79,7 @@ export const Footer = () => {
                 </div>
 
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem', textAlign: 'center', fontSize: '0.9rem', opacity: 0.5 }}>
-                    <p>&copy; 2026 Shine Experts Ltd. All rights reserved.</p>
+                    <p>&copy; 2026 Shine Experts Ltd. All rights reserved. | <Link to="/privacy" style={{ color: 'white', textDecoration: 'none' }}>Privacy Policy</Link></p>
                 </div>
             </div>
         </footer>
