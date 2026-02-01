@@ -6,16 +6,19 @@
     --primary-green: #E8F780;
     --primary-yellow: var(--primary-green);
 
-    /* Light Theme Tokens (Default) */
+    /* Light Theme Tokens (Restoring Original) */
     --bg-main: var(--primary-mint);
     --bg-soft: #ffffff;
     --bg-dark-elem: var(--primary-teal);
     --text-primary: var(--primary-teal);
-    --text-secondary: #556B70;
+    --text-secondary: #666666;
+    /* Original gray */
     --glass-bg: rgba(255, 255, 255, 0.4);
     --glass-border: rgba(255, 255, 255, 0.8);
     --button-outline: var(--primary-teal);
     --card-shadow: rgba(0, 0, 0, 0.05);
+    --bento-bg: var(--primary-teal);
+    --bento-text: #ffffff;
 
     /* Spacing & Borders */
     --gap-md: 2rem;
@@ -39,6 +42,8 @@
     --glass-border: rgba(255, 255, 255, 0.1);
     --button-outline: #ffffff;
     --card-shadow: rgba(0, 0, 0, 0.3);
+    --bento-bg: #0a2e36;
+    --bento-text: #ffffff;
 }
 
 * {
@@ -101,8 +106,8 @@ body {
 }
 
 .bento-card {
-    background-color: var(--bg-soft);
-    color: var(--text-primary);
+    background-color: var(--bento-bg);
+    color: var(--bento-text);
     border-radius: var(--radius-lg);
     padding: 1.5rem;
     position: relative;
@@ -130,10 +135,11 @@ body {
 
 /* Inner Opaque Cards */
 .glass-inner-card {
-    background: var(--bg-soft);
+    background: #ffffff;
+    /* Keep white for readability inside cards */
     border-radius: 24px;
     padding: 1.5rem;
-    color: var(--text-primary);
+    color: var(--primary-teal);
     box-shadow: 0 4px 15px var(--card-shadow);
     transition: transform 0.2s;
     border: 1px solid var(--glass-border);
