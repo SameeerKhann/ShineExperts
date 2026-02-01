@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Play, Star } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export const HeroSection = () => {
     return (
@@ -101,9 +102,16 @@ export const HeroSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}
+                    style={{
+                        display: 'flex',
+                        gap: '1rem',
+                        justifyContent: 'center',
+                        flexWrap: 'wrap',
+                        position: 'relative',
+                        zIndex: 10
+                    }}
                 >
-                    <a href="/book" className="btn" style={{
+                    <Link to="/book" className="btn" style={{
                         background: 'var(--primary-green)',
                         color: 'var(--bg-dark)',
                         padding: '1rem 2rem',
@@ -114,9 +122,9 @@ export const HeroSection = () => {
                         fontSize: '1.1rem'
                     }}>
                         Book a Clean <ArrowRight size={20} />
-                    </a>
+                    </Link>
 
-                    <a href="/services" className="btn" style={{
+                    <Link to="/services" className="btn" style={{
                         background: 'rgba(255,255,255,0.1)',
                         color: 'white',
                         padding: '1rem 2rem',
@@ -128,7 +136,7 @@ export const HeroSection = () => {
                         border: '1px solid rgba(255,255,255,0.2)'
                     }}>
                         View Services
-                    </a>
+                    </Link>
                 </motion.div>
 
             </div>
