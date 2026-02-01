@@ -12,23 +12,12 @@ import { ReviewsPage } from './pages/ReviewsPage'
 import { CustomerStoriesPage } from './pages/CustomerStoriesPage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import { Preloader } from './components/Layout/Preloader'
-import { ThemeToggle } from './components/UI/ThemeToggle'
 import { useState, useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { ScrollToTop } from './components/Layout/ScrollToTop'
 
 function App() {
     const [loading, setLoading] = useState(true)
-    const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light')
-
-    useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme)
-        localStorage.setItem('theme', theme)
-    }, [theme])
-
-    const toggleTheme = () => {
-        setTheme(prev => prev === 'light' ? 'dark' : 'light')
-    }
 
     return (
         <>
@@ -39,7 +28,6 @@ function App() {
             {!loading && (
                 <>
                     <ScrollToTop />
-                    <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
                     <Routes>
                         <Route path="/" element={<MainLayout />}>
                             <Route index element={<HomePage />} />

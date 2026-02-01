@@ -17,7 +17,7 @@ export const MainLayout = () => {
 
     const linkStyle = (path) => ({
         textDecoration: 'none',
-        color: isActive(path) ? 'var(--text-primary)' : 'var(--text-secondary)',
+        color: isActive(path) ? 'var(--bg-dark)' : '#666',
         fontWeight: isActive(path) ? '700' : '500',
         transition: 'color 0.2s'
     })
@@ -32,11 +32,10 @@ export const MainLayout = () => {
             backgroundAttachment: 'fixed',
             backgroundPosition: 'center',
             minHeight: '100vh',
-            fontFamily: 'var(--font-body)',
-            transition: 'background-color 0.3s ease'
+            fontFamily: 'var(--font-body)'
         }}>
-            {/* Background Overlay */}
-            <div style={{ position: 'fixed', inset: 0, background: 'var(--bg-main)', opacity: 0.85, zIndex: 0 }} />
+            {/* Light Overlay */}
+            <div style={{ position: 'fixed', inset: 0, background: 'rgba(255,255,255,0.85)', zIndex: 0 }} />
 
             <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
 
@@ -50,11 +49,11 @@ export const MainLayout = () => {
                     alignItems: 'center',
                     padding: '0.75rem 1rem',
                     marginBottom: '3rem',
-                    background: 'var(--glass-bg)',
+                    background: 'rgba(255, 255, 255, 0.8)',
                     backdropFilter: 'blur(12px)',
                     borderRadius: '100px',
-                    border: '1px solid var(--glass-border)',
-                    boxShadow: '0 4px 20px var(--card-shadow)',
+                    border: '1px solid rgba(255,255,255,0.3)',
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
                     marginTop: '1rem',
                     maxWidth: '1000px',
                     marginLeft: 'auto',
@@ -63,7 +62,7 @@ export const MainLayout = () => {
                 }}>
                     {/* Logo */}
                     <Link to="/" className="logo" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', paddingLeft: '0.5rem' }}>
-                        <Logo size={120} color="var(--text-primary)" />
+                        <Logo size={120} color="var(--bg-dark)" />
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -89,9 +88,9 @@ export const MainLayout = () => {
                             className="mobile-menu-btn"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             style={{
-                                background: 'var(--text-primary)',
+                                background: 'var(--bg-dark)',
                                 border: 'none',
-                                color: 'var(--bg-main)',
+                                color: 'white',
                                 padding: '0.6rem',
                                 borderRadius: '50%',
                                 cursor: 'pointer',
@@ -114,11 +113,10 @@ export const MainLayout = () => {
                             exit={{ opacity: 0, x: '100%' }}
                             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
                             className="mobile-menu"
-                            style={{ background: 'var(--bg-soft)', color: 'var(--text-primary)' }}
                         >
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-                                <Logo size={120} color="var(--text-primary)" />
-                                <button onClick={() => setIsMenuOpen(false)} style={{ background: 'none', border: 'none', color: 'var(--text-primary)' }}>
+                                <Logo size={120} color="var(--bg-dark)" />
+                                <button onClick={() => setIsMenuOpen(false)} style={{ background: 'none', border: 'none', color: 'var(--bg-dark)' }}>
                                     <X size={32} />
                                 </button>
                             </div>
