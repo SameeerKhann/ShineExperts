@@ -11,9 +11,15 @@ export const BookingWizard = () => {
         bedrooms: '1 Bedroom',
         date: '',
         time: '09:00',
+        area: 'Manchester City Centre',
         name: '',
         email: ''
     })
+
+    const boroughs = [
+        "Manchester City Centre", "Salford", "Stockport", "Trafford",
+        "Bolton", "Bury", "Oldham", "Rochdale", "Tameside", "Wigan"
+    ]
 
     const nextStep = () => setStep(s => s + 1)
     const prevStep = () => setStep(s => s - 1)
@@ -81,19 +87,6 @@ export const BookingWizard = () => {
                             <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
                                 <h3 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Schedule Details</h3>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                                    <div>
-                                        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Bedrooms</label>
-                                        <select
-                                            value={formData.bedrooms}
-                                            onChange={(e) => setFormData({ ...formData, bedrooms: e.target.value })}
-                                            style={{ width: '100%', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid #ddd', fontSize: '1rem' }}
-                                        >
-                                            <option>1 Bedroom</option>
-                                            <option>2 Bedrooms</option>
-                                            <option>3 Bedrooms</option>
-                                            <option>4+ Bedrooms</option>
-                                        </select>
-                                    </div>
                                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                                         <div>
                                             <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Preferred Date</label>
@@ -123,6 +116,29 @@ export const BookingWizard = () => {
                                             </select>
                                         </div>
                                     </div>
+                                    <div>
+                                        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Service Area (Manchester, UK)</label>
+                                        <select
+                                            value={formData.area}
+                                            onChange={(e) => setFormData({ ...formData, area: e.target.value })}
+                                            style={{ width: '100%', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid #ddd', fontSize: '1rem' }}
+                                        >
+                                            {boroughs.map(b => <option key={b} value={b}>{b}</option>)}
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Bedrooms</label>
+                                        <select
+                                            value={formData.bedrooms}
+                                            onChange={(e) => setFormData({ ...formData, bedrooms: e.target.value })}
+                                            style={{ width: '100%', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid #ddd', fontSize: '1rem' }}
+                                        >
+                                            <option>1 Bedroom</option>
+                                            <option>2 Bedrooms</option>
+                                            <option>3 Bedrooms</option>
+                                            <option>4+ Bedrooms</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </motion.div>
                         )}
@@ -138,16 +154,16 @@ export const BookingWizard = () => {
                                             <p style={{ fontWeight: 600 }}>{formData.service}</p>
                                         </div>
                                         <div>
+                                            <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '0.2rem' }}>Location</p>
+                                            <p style={{ fontWeight: 600 }}>{formData.area}</p>
+                                        </div>
+                                        <div>
                                             <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '0.2rem' }}>Property</p>
                                             <p style={{ fontWeight: 600 }}>{formData.bedrooms}</p>
                                         </div>
                                         <div>
-                                            <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '0.2rem' }}>Date</p>
-                                            <p style={{ fontWeight: 600 }}>{formData.date || 'To be selected'}</p>
-                                        </div>
-                                        <div>
-                                            <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '0.2rem' }}>Time</p>
-                                            <p style={{ fontWeight: 600 }}>{formData.time} AM/PM</p>
+                                            <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '0.2rem' }}>Schedule</p>
+                                            <p style={{ fontWeight: 600 }}>{formData.date || 'TBD'} @ {formData.time}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -166,7 +182,7 @@ export const BookingWizard = () => {
                                     />
                                 </div>
                                 <p style={{ fontSize: '0.85rem', color: '#888', marginTop: '1rem' }}>
-                                    * Our team will contact you to confirm the exact price and availability.
+                                    * Our team will contact you to confirm the exact price and availability in {formData.area}.
                                 </p>
                             </motion.div>
                         )}
