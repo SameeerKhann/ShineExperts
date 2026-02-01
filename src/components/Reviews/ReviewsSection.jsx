@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Star, ArrowUpRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const REVIEWS = [
     {
@@ -53,12 +54,12 @@ export const ReviewsSection = () => {
                             Clearer Mind
                         </h2>
                         <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '2rem' }}>
-                            <button style={{ background: 'var(--bg-dark)', border: 'none', padding: '0.8rem 1.5rem', borderRadius: '50px', fontWeight: '600', color: 'white' }}>
+                            <Link to="/services" style={{ background: 'var(--bg-dark)', border: 'none', padding: '0.8rem 1.5rem', borderRadius: '50px', fontWeight: '600', color: 'white', textDecoration: 'none' }}>
                                 Our Reviews
-                            </button>
-                            <button style={{ background: 'transparent', border: '1px solid rgba(0,0,0,0.1)', padding: '0.8rem 1.5rem', borderRadius: '50px', fontWeight: '600', color: 'var(--bg-dark)' }}>
+                            </Link>
+                            <Link to="/blog" style={{ background: 'transparent', border: '1px solid rgba(0,0,0,0.1)', padding: '0.8rem 1.5rem', borderRadius: '50px', fontWeight: '600', color: 'var(--bg-dark)', textDecoration: 'none' }}>
                                 Customer Stories
-                            </button>
+                            </Link>
                         </div>
                     </div>
 
