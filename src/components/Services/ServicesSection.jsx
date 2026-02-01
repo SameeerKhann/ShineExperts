@@ -34,7 +34,7 @@ export const ServicesSection = () => {
                             <span style={{ fontWeight: 600 }}>Domestic</span>
                         </div>
                         <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem' }}>Regular Clean</h3>
-                        <p style={{ color: '#666' }}>Weekly or fortnightly visits to keep your sanctuary pristine.</p>
+                        <p style={{ color: 'var(--text-secondary)' }}>Weekly or fortnightly visits to keep your sanctuary pristine.</p>
                     </div>
                     <button className="btn-outline" style={{ border: '1px solid var(--text-secondary)', color: 'var(--text-primary)', width: 'fit-content', marginTop: '1rem', padding: '0.5rem 1rem' }}>
                         Learn More <MoveRight size={16} />
