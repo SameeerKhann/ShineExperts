@@ -7,6 +7,7 @@ import { BookingPage } from './pages/BookingPage'
 import { ContactPage } from './pages/ContactPage'
 import { BlogPage } from './pages/BlogPage'
 import { FaqsPage } from './pages/FaqsPage'
+import { ServiceAreasPage } from './pages/ServiceAreasPage'
 import { Preloader } from './components/Layout/Preloader'
 import { useState, useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
@@ -31,6 +32,7 @@ function App() {
                             <Route path="blog" element={<BlogPage />} />
                             <Route path="book" element={<BookingPage />} />
                             <Route path="faqs" element={<FaqsPage />} />
+                            <Route path="areas" element={<ServiceAreasPage />} />
                             <Route path="contact" element={<ContactPage />} />
                         </Route>
                     </Routes>

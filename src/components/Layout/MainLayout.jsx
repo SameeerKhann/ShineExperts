@@ -70,6 +70,7 @@ export const MainLayout = () => {
                         <Link to="/services" style={linkStyle('/services')}>Services</Link>
                         <Link to="/blog" style={linkStyle('/blog')}>Blog</Link>
                         <Link to="/faqs" style={linkStyle('/faqs')}>FAQs</Link>
+                        <Link to="/areas" style={linkStyle('/areas')}>Areas</Link>
                         <Link to="/contact" style={linkStyle('/contact')}>Contact</Link>
                     </div>
 
