@@ -77,7 +77,7 @@ export const Preloader = ({ setLoading }) => {
                 </motion.div>
             </div>
 
-            <div style={{ position: 'absolute', bottom: '40px', right: '40px', fontSize: '10rem', fontWeight: 'bold', overflow: 'hidden', lineHeight: 1 }}>
+            <div style={{ position: 'absolute', bottom: '40px', right: '40px', fontSize: 'clamp(5rem, 15vw, 10rem)', fontWeight: 'bold', overflow: 'hidden', lineHeight: 1 }}>
                 <motion.span
                     initial={{ y: 100 }}
                     animate={{ y: 0 }}
