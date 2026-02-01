@@ -10,6 +10,7 @@ import { FaqsPage } from './pages/FaqsPage'
 import { Preloader } from './components/Layout/Preloader'
 import { useState, useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import { ScrollToTop } from './components/Layout/ScrollToTop'
 
 function App() {
     const [loading, setLoading] = useState(true)
@@ -21,16 +22,19 @@ function App() {
             </AnimatePresence>
 
             {!loading && (
-                <Routes>
-                    <Route path="/" element={<MainLayout />}>
-                        <Route index element={<HomePage />} />
-                        <Route path="services" element={<ServicesPage />} />
-                        <Route path="blog" element={<BlogPage />} />
-                        <Route path="book" element={<BookingPage />} />
-                        <Route path="faqs" element={<FaqsPage />} />
-                        <Route path="contact" element={<ContactPage />} />
-                    </Route>
-                </Routes>
+                <>
+                    <ScrollToTop />
+                    <Routes>
+                        <Route path="/" element={<MainLayout />}>
+                            <Route index element={<HomePage />} />
+                            <Route path="services" element={<ServicesPage />} />
+                            <Route path="blog" element={<BlogPage />} />
+                            <Route path="book" element={<BookingPage />} />
+                            <Route path="faqs" element={<FaqsPage />} />
+                            <Route path="contact" element={<ContactPage />} />
+                        </Route>
+                    </Routes>
+                </>
             )}
         </>
     )
