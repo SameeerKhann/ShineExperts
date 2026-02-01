@@ -1,0 +1,185 @@
+:root {
+    /* Design Tokens - Eloqwnt Inspired Agency Theme */
+    --primary-teal: #062229;
+    --primary-mint: #F0F7F5;
+    --primary-energy: #42AD47;
+    /* Legacy Green */
+    --primary-green: #E8F780;
+    /* Main Accent Green (Lime) */
+    --primary-yellow: var(--primary-green);
+
+    --bg-dark: var(--primary-teal);
+    --bg-dark-soft: #0A2E36;
+    --text-mist: #B0C4C9;
+    --text-white: #ffffff;
+    /* Keeping this as it's not explicitly removed */
+    --card-bg: rgba(255, 255, 255, 0.05);
+    /* Keeping this as it's not explicitly removed */
+
+    --gap-md: 2rem;
+    /* Increased gap for luxury feel */
+    --radius-lg: 24px;
+    /* Slightly tighter, cleaner curves */
+    --radius-md: 16px;
+    --radius-sm: 8px;
+
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    background-color: var(--primary-mint);
+    color: var(--bg-dark);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    /* Crisp text */
+}
+
+/* Utility Classes for Bento Grid */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gap-md);
+    padding: var(--gap-md);
+}
+
+.bento-card {
+    background-color: var(--bg-dark);
+    color: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    /* subtle border for depth */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bento-card.light {
+    background-color: #f5f5f5;
+    color: var(--bg-dark);
+}
+
+/* Premium Glass/Mirror Effect from Reference */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 40px;
+    /* Larger radius as per image */
+}
+
+/* Inner Opaque Cards */
+.glass-inner-card {
+    background: white;
+    border-radius: 24px;
+    padding: 1.5rem;
+    color: var(--bg-dark);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.glass-inner-card:hover {
+    transform: translateY(-5px);
+}
+
+.bento-card.accent {
+    background-color: var(--primary-yellow);
+    color: var(--bg-dark);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-heading);
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    color: var(--bg-dark);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Custom Eloqwnt-style Button */
+.main-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8em 1.8em;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--bg-dark);
+    background: transparent;
+    border: 1px solid var(--bg-dark);
+    /* or transparent if using bg */
+    border-radius: 100px;
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+.main-btn .btn-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: var(--bg-dark);
+    transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: -1;
+    border-radius: 50% 50% 0 0;
+    /* Curve effect */
+}
+
+.main-btn:hover {
+    color: white;
+    border-color: var(--bg-dark);
+}
+
+.main-btn:hover .btn-bg {
+    height: 150%;
+    /* Overshoot for full fill */
+    border-radius: 0;
+}
+
+.main-btn .relative-1 {
+    position: relative;
+    z-index: 2;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 767px) {
+    .logo {
+        display: none !important;
+    }
+}
