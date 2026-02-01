@@ -68,10 +68,10 @@ export const MainLayout = () => {
                     <div className="desktop-menu" style={{ display: 'flex', gap: '2rem', fontSize: '0.95rem', fontWeight: '500' }}>
                         <Link to="/" style={linkStyle('/')}>Home</Link>
                         <Link to="/services" style={linkStyle('/services')}>Services</Link>
-                        <Link to="/blog" style={linkStyle('/blog')}>Blog</Link>
-                        <Link to="/faqs" style={linkStyle('/faqs')}>FAQs</Link>
                         <Link to="/areas" style={linkStyle('/areas')}>Areas</Link>
+                        <Link to="/blog" style={linkStyle('/blog')}>Blog</Link>
                         <Link to="/contact" style={linkStyle('/contact')}>Contact</Link>
+                        <Link to="/faqs" style={linkStyle('/faqs')}>FAQs</Link>
                     </div>
 
                     <Link to="/book" className="main-btn" style={{ textDecoration: 'none', border: '1px solid var(--bg-dark)' }}>
