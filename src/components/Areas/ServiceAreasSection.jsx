@@ -86,7 +86,7 @@ export const ServiceAreasSection = () => {
                     }}
                 >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                        <div style={{ background: 'rgba(0, 245, 160, 0.1)', padding: '0.8rem', borderRadius: '12px' }}>
+                        <div style={{ background: '#062229', padding: '0.8rem', borderRadius: '12px' }}>
                             <MapPin color="var(--primary-green)" size={24} />
                         </div>
                         <h3 style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--bg-dark)' }}>{borough.name}</h3>
