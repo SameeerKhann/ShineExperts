@@ -97,7 +97,7 @@ export const Preloader = ({ setLoading }) => {
                     ))}
                 </div>
 
-                {/* Vacuum Nozzle */}
+                {/* Vacuum Nozzle & Handle */}
                 <motion.div
                     style={{
                         position: 'absolute',
@@ -106,28 +106,54 @@ export const Preloader = ({ setLoading }) => {
                         transform: 'translate(-50%, -50%)',
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '10px'
+                        zIndex: 2
                     }}
                 >
+                    {/* The "Pipe" / Handle trailing back */}
                     <div style={{
-                        width: '40px',
-                        height: '24px',
+                        position: 'absolute',
+                        right: '100%',
+                        width: '120px',
+                        height: '12px',
+                        background: 'linear-gradient(90deg, transparent, rgba(232, 247, 128, 0.4))',
+                        borderRadius: '20px',
+                        transform: 'translateX(20px) rotate(-10deg)',
+                        transformOrigin: 'right center',
+                        borderRight: '2px solid var(--primary-green)',
+                        opacity: 0.6
+                    }} />
+
+                    {/* Floor Tool / Nozzle Head */}
+                    <div style={{
+                        position: 'relative',
+                        width: '50px',
+                        height: '32px',
                         background: 'var(--primary-green)',
-                        borderRadius: '4px 12px 12px 4px',
+                        borderRadius: '6px 20px 20px 6px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'flex-end',
-                        paddingRight: '4px',
-                        boxShadow: '0 0 20px rgba(232, 247, 128, 0.4)'
+                        paddingRight: '6px',
+                        boxShadow: '0 10px 30px rgba(0,0,0,0.3), 0 0 20px rgba(232, 247, 128, 0.3)',
+                        border: '1px solid rgba(255,255,255,0.2)'
                     }}>
-                        <div style={{ width: '4px', height: '16px', background: 'rgba(0,0,0,0.2)', borderRadius: '2px' }} />
+                        {/* Internal Detailing */}
+                        <div style={{ width: '4px', height: '20px', background: 'rgba(0,0,0,0.2)', borderRadius: '2px' }} />
+
+                        {/* Miniature Wheels */}
+                        <div style={{ position: 'absolute', bottom: '-4px', left: '10px', width: '12px', height: '12px', background: '#333', borderRadius: '50%', border: '2px solid #555' }} />
+                        <div style={{ position: 'absolute', bottom: '-4px', right: '10px', width: '12px', height: '12px', background: '#333', borderRadius: '50%', border: '2px solid #555' }} />
                     </div>
+
+                    {/* Suction Area (invisible buffer) */}
+                    <div style={{ width: '20px' }}></div>
+
                     {/* Air Effect */}
                     <motion.div
-                        animate={{ opacity: [0.2, 0.5, 0.2], x: [-5, 5, -5] }}
-                        transition={{ repeat: Infinity, duration: 0.5 }}
+                        animate={{ opacity: [0.3, 0.7, 0.3], scale: [0.8, 1.2, 0.8], x: [-3, 3, -3] }}
+                        transition={{ repeat: Infinity, duration: 0.4 }}
                     >
-                        <Wind size={20} color="var(--primary-green)" />
+                        <Wind size={24} color="var(--primary-green)" />
                     </motion.div>
                 </motion.div>
             </div>
