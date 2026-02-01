@@ -108,17 +108,6 @@ export const Preloader = ({ setLoading }) => {
                         alignItems: 'center',
                     }}
                 >
-                    {/* Hose - connects back to left edge */}
-                    <div style={{
-                        position: 'absolute',
-                        right: '100%',
-                        width: '100vw',
-                        height: '8px',
-                        background: 'rgba(255,255,255,0.1)',
-                        borderTop: '2px solid rgba(255,255,255,0.05)',
-                        borderBottom: '2px solid rgba(255,255,255,0.05)',
-                        borderRadius: '4px'
-                    }} />
 
                     {/* Wand/Handle */}
                     <div style={{
