@@ -7,7 +7,7 @@ export const HeroSection = () => {
     return (
         <section style={{
             position: 'relative',
-            padding: '6rem 0 4rem',
+            padding: 'clamp(3rem, 8vh, 6rem) 0 4rem',
             minHeight: '100vh',
             display: 'flex',
             flexDirection: 'column',

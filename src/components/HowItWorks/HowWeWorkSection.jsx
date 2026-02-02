@@ -27,7 +27,7 @@ const STEPS = [
 
 export const HowWeWorkSection = () => {
     return (
-        <section style={{ padding: '6rem 1rem', maxWidth: '1200px', margin: '0 auto' }}>
+        <section style={{ padding: 'clamp(3rem, 8vw, 6rem) 1rem', maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                 <span style={{
                     color: 'var(--primary-yellow)',

@@ -25,13 +25,13 @@ export const BookingWizard = () => {
     const prevStep = () => setStep(s => s - 1)
 
     return (
-        <section className="bento-grid" id="book" style={{ marginTop: '4rem' }}>
-            <div className="bento-card" style={{ gridColumn: 'span 12', minHeight: '600px', display: 'flex', gap: '2rem', padding: '0', overflow: 'hidden' }}>
+        <section className="bento-grid m-t-4" id="book">
+            <div className="bento-card col-span-12 mobile-stack-layout" style={{ gap: '0', padding: '0', overflow: 'hidden' }}>
 
                 {/* Left Panel: Progress & Info */}
-                <div style={{ flex: '1', background: 'var(--bg-dark-soft)', padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div className="flex-column p-2 p-md-3" style={{ background: 'var(--bg-dark-soft)', justifyContent: 'space-between' }}>
                     <div>
-                        <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'white' }}>Book <span style={{ color: 'var(--primary-yellow)' }}>Online</span></h2>
+                        <h2 className="fs-h1-mobile" style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'white' }}>Book <span style={{ color: 'var(--primary-yellow)' }}>Online</span></h2>
                         <p style={{ color: 'var(--text-mist)' }}>Get a sparkling clean home in 3 simple steps.</p>
                     </div>
 
@@ -57,12 +57,12 @@ export const BookingWizard = () => {
                 </div>
 
                 {/* Right Panel: Form Fields */}
-                <div style={{ flex: '2', padding: '3rem', background: 'white', color: 'var(--bg-dark)', position: 'relative' }}>
+                <div className="p-2 p-md-3" style={{ background: 'white', color: 'var(--bg-dark)', position: 'relative' }}>
                     <AnimatePresence mode="wait">
                         {step === 1 && (
                             <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
                                 <h3 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Select Service Type</h3>
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                                <div className="grid-cols-1-md-2" style={{ gap: '1rem' }}>
                                     {['Standard Clean', 'Deep Clean', 'End of Tenancy', 'After Builders'].map(type => (
                                         <button key={type}
                                             onClick={() => setFormData({ ...formData, service: type })}
@@ -86,8 +86,8 @@ export const BookingWizard = () => {
                         {step === 2 && (
                             <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
                                 <h3 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Schedule Details</h3>
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                                <div className="flex-column" style={{ gap: '1.5rem' }}>
+                                    <div className="grid-cols-1-md-2" style={{ gap: '1rem' }}>
                                         <div>
                                             <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>Preferred Date</label>
                                             <input
@@ -148,7 +148,7 @@ export const BookingWizard = () => {
                                 <h3 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Confirm Details</h3>
                                 <div style={{ background: '#f8f9fa', padding: '2rem', borderRadius: 'var(--radius-sm)', marginBottom: '2rem' }}>
                                     <h4 style={{ marginBottom: '1.5rem', borderBottom: '1px solid #eee', paddingBottom: '0.5rem' }}>Booking Summary</h4>
-                                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                                    <div className="grid-cols-1-md-2" style={{ gap: '1rem' }}>
                                         <div>
                                             <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '0.2rem' }}>Service</p>
                                             <p style={{ fontWeight: 600 }}>{formData.service}</p>
@@ -167,7 +167,7 @@ export const BookingWizard = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                                <div className="flex-column" style={{ gap: '1rem' }}>
                                     <input
                                         placeholder="Full Name"
                                         value={formData.name}

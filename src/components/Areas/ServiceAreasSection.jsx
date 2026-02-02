@@ -102,10 +102,9 @@ export const ServiceAreasSection = () => {
                 </motion.div>
             ))}
 
-            <div className="bento-card col-span-12" style={{
+            <div className="bento-card col-span-12 p-2 p-md-4" style={{
                 background: 'var(--bg-dark)',
                 color: 'white',
-                padding: '4rem',
                 marginTop: '2rem',
                 textAlign: 'center',
                 display: 'flex',

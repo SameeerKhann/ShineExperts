@@ -13,7 +13,7 @@ export const ServicesSection = () => {
     return (
         <section className="bento-grid" id="services">
             {/* Header Card */}
-            <div className="col-span-12" style={{ textAlign: 'center', padding: '4rem 1rem' }}>
+            <div className="col-span-12 p-2 p-md-4" style={{ textAlign: 'center' }}>
                 <h2 style={{ fontSize: '3rem', marginBottom: '1rem' }}>Professional Services</h2>
                 <p style={{ color: '#666', fontSize: '1.2rem' }}>Tailored for every corner of your life.</p>
             </div>

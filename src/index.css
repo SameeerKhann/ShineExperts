@@ -41,7 +41,7 @@ body {
 /* Utility Classes for Bento Grid */
 .bento-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1rem;
 }
@@ -59,7 +59,15 @@ body {
     grid-column: span 1 / span 1;
 }
 
+.col-span-7 {
+    grid-column: span 1 / span 1;
+}
+
 .col-span-6 {
+    grid-column: span 1 / span 1;
+}
+
+.col-span-5 {
     grid-column: span 1 / span 1;
 }
 
@@ -72,13 +80,118 @@ body {
         grid-column: span 12;
     }
 
+    .col-span-7 {
+        grid-column: span 7;
+    }
+
     .col-span-6 {
         grid-column: span 6;
+    }
+
+    .col-span-5 {
+        grid-column: span 5;
     }
 
     .col-span-4 {
         grid-column: span 4;
     }
+}
+
+/* Flex Utilities */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-stack-layout {
+    display: flex;
+    flex-direction: column !important;
+}
+
+@media (min-width: 768px) {
+    .mobile-stack-layout {
+        flex-direction: row !important;
+        gap: 2rem;
+    }
+
+    .mobile-stack-layout>*:first-child {
+        flex: 1;
+    }
+
+    .mobile-stack-layout>*:last-child {
+        flex: 2;
+    }
+}
+
+/* Grid Utilities */
+.grid-cols-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.grid-cols-1-md-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .grid-cols-1-md-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Spacing Utilities */
+.p-1 {
+    padding: 1rem;
+}
+
+.p-2 {
+    padding: 1.5rem;
+}
+
+.p-3 {
+    padding: 2rem;
+}
+
+@media (min-width: 768px) {
+    .p-md-3 {
+        padding: 3rem;
+    }
+
+    .p-md-4 {
+        padding: 4rem;
+    }
+}
+
+.m-t-2 {
+    margin-top: 2rem;
+}
+
+.m-t-4 {
+    margin-top: 4rem;
+}
+
+@media (max-width: 767px) {
+    .m-t-mobile-2 {
+        margin-top: 2rem;
+    }
+
+    .text-center-mobile {
+        text-align: center;
+    }
+
+    .fs-h2-mobile {
+        font-size: 2rem !important;
+    }
+
+    .fs-h1-mobile {
+        font-size: 1.75rem !important;
+    }
+}
+
+/* Text Utilities */
+.text-center {
+    text-align: center;
 }
 
 .bento-card {
