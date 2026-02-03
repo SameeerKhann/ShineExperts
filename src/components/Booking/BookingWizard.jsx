@@ -76,7 +76,7 @@ export const BookingWizard = () => {
 
         } catch (error) {
             console.error('EmailJS Error:', error)
-            alert('Failed to send booking. Please try again or contact us directly.')
+            alert('Failed to send booking: ' + (error.text || error.message || 'Unknown error'))
         } finally {
             setIsSubmitting(false)
         }
