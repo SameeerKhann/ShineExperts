@@ -4,7 +4,7 @@ import { Calendar, User, Check, ChevronRight, ChevronLeft, Loader2 } from 'lucid
 import emailjs from '@emailjs/browser'
 
 // EMAILJS CONFIGURATION
-const EMAILJS_SERVICE_ID = "service_z0t3k9i"
+const EMAILJS_SERVICE_ID = "service_4qfvlqp"
 const EMAILJS_TEMPLATE_ID = "template_xzp3c2m"
 const EMAILJS_PUBLIC_KEY = "d4D3-kPhJAiwMEdEl"
 
