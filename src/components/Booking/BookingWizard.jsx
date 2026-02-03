@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser'
 // EMAILJS CONFIGURATION
 const EMAILJS_SERVICE_ID = "service_4qfvlqp"
 const EMAILJS_TEMPLATE_ID = "template_xzp3c2m"
-const EMAILJS_PUBLIC_KEY = "d4D3-kPhJAiwMEdEl"
+const EMAILJS_PUBLIC_KEY = "xtSiskA07iRIiWn1f"
 
 export const BookingWizard = () => {
     const [step, setStep] = useState(1)
