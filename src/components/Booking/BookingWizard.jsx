@@ -1,9 +1,16 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Calendar, User, Check, ChevronRight, ChevronLeft } from 'lucide-react'
+import { Calendar, User, Check, ChevronRight, ChevronLeft, Loader2 } from 'lucide-react'
+import emailjs from '@emailjs/browser'
+
+// EMAILJS CONFIGURATION
+const EMAILJS_SERVICE_ID = "service_z0t3k9i"
+const EMAILJS_TEMPLATE_ID = "template_xzp3c2m"
+const EMAILJS_PUBLIC_KEY = "d4D3-kPhJAiwMEdEl"
 
 export const BookingWizard = () => {
     const [step, setStep] = useState(1)
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     // Mock State for the form
     const [formData, setFormData] = useState({
@@ -13,7 +20,8 @@ export const BookingWizard = () => {
         time: '09:00',
         area: 'Manchester City Centre',
         name: '',
-        email: ''
+        email: '',
+        phone: '' // Added phone field
     })
 
     const boroughs = [
@@ -23,6 +31,56 @@ export const BookingWizard = () => {
 
     const nextStep = () => setStep(s => s + 1)
     const prevStep = () => setStep(s => s - 1)
+
+    const sendBooking = async () => {
+        // Validation
+        if (!formData.name || !formData.email || !formData.date) {
+            alert('Please fill in all required fields (Name, Email, Date).')
+            return
+        }
+
+        setIsSubmitting(true)
+
+        try {
+            await emailjs.send(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                {
+                    to_name: "Shine Experts Team",
+                    user_name: formData.name,
+                    user_email: formData.email,
+                    user_phone: formData.phone || 'Not provided',
+                    service: formData.service,
+                    bedrooms: formData.bedrooms,
+                    area: formData.area,
+                    date: formData.date,
+                    time: formData.time,
+                    message: `New Booking Request: ${formData.service} in ${formData.area} on ${formData.date} @ ${formData.time}`
+                },
+                EMAILJS_PUBLIC_KEY
+            )
+
+            alert('Booking Request Sent Successfully! We will contact you shortly.')
+            // Reset or redirect could go here
+            setStep(1)
+            setFormData({
+                service: 'Standard Clean',
+                bedrooms: '1 Bedroom',
+                date: '',
+                time: '09:00',
+                area: 'Manchester City Centre',
+                name: '',
+                email: '',
+                phone: ''
+            })
+
+        } catch (error) {
+            console.error('EmailJS Error:', error)
+            alert('Failed to send booking. Please try again or contact us directly.')
+        } finally {
+            setIsSubmitting(false)
+        }
+    }
 
     return (
         <section className="bento-grid m-t-4" id="book">
@@ -180,6 +238,12 @@ export const BookingWizard = () => {
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                         style={{ width: '100%', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid #ddd' }}
                                     />
+                                    <input
+                                        placeholder="Phone Number (Optional)"
+                                        value={formData.phone}
+                                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                        style={{ width: '100%', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid #ddd' }}
+                                    />
                                 </div>
                                 <p style={{ fontSize: '0.85rem', color: '#888', marginTop: '1rem' }}>
                                     * Our team will contact you to confirm the exact price and availability in {formData.area}.
@@ -195,8 +259,13 @@ export const BookingWizard = () => {
                                 Back
                             </button>
                         )}
-                        <button onClick={step === 3 ? () => alert('Booking Request Sent!') : nextStep} className="btn-primary" style={{ padding: '1rem 3rem' }}>
-                            {step === 3 ? 'Request Booking' : 'Next Step'}
+                        <button
+                            onClick={step === 3 ? sendBooking : nextStep}
+                            disabled={isSubmitting}
+                            className="btn-primary"
+                            style={{ padding: '1rem 3rem', display: 'flex', alignItems: 'center', gap: '10px', opacity: isSubmitting ? 0.7 : 1 }}
+                        >
+                            {isSubmitting ? <Loader2 className="animate-spin" /> : (step === 3 ? 'Request Booking' : 'Next Step')}
                         </button>
                     </div>
                 </div>
